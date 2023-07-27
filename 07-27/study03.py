@@ -1,31 +1,30 @@
+class Animal:
+    num_of_animal = 0
+
 
 class Cat:
-    def __init__(self, meow):
-        self.sound_cat = meow
-    def __str__(self):
-        return self.sound_cat
+   def meow(self):
+        print("야옹 !\n",end="")
 
 
 class Dog:
-    def __init__(self, mung):
-        self.sound_dog = mung
-    def __str__(self):
-        return self.sound_dog
+   def bark(self):
+        print("멍멍 !\n",end="")
 
 
 class Pet(Dog, Cat):
-    def __init__(self):
-        Dog.__init__(self,"멍멍")
-        Cat.__init__(self,"야옹")
 
-    def __str__(self):
-        dog_s = Dog.__str__(self)
-        cat_s = Cat.__str__(self)
-        return f"애완동물은 {dog_s} 소리를 냅니다.\n애완동물은 {cat_s} 소리를 냅니다."
+    def __init__(self,gg):
+        self.gg = gg
 
+    def make_sound(self):
+        print(self.gg)
+    
+    def play(self):
+        print("애완동물과 놀기", end="")
 
-dog1 = Dog("멍멍")
-cat1 = Cat("야옹")
-
-pet1 = Pet()
-print(pet1,end="")
+pet1 = Pet("그르르")
+pet1.make_sound()
+pet1.bark()
+pet1.meow()
+pet1.play()

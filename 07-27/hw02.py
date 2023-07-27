@@ -7,7 +7,6 @@ class UserInfo:
     
     
     def get_user_info(self):
-        
         while 1:
             try:
                 self.user_data["name"] = input("이름을 입력하세요 :")
@@ -18,9 +17,11 @@ class UserInfo:
             except ValueError:
                 break
     
+
     def display_user_info(self):
         print("나이는 숫자로 입력해야 합니다.")    
-        print("사용자 정보가 입력되지 않았습니다.")
+        print("사용자 정보가 입력되지 않았습니다.",end="")
+
 
 user = UserInfo()
 user.get_user_info()
