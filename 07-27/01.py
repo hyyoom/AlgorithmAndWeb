@@ -14,7 +14,7 @@ class Person:
 
 
 class Professor(Person):
-    def __init__(department):
+    def __init__(self, name, age, department):
         # Person.__init__(self, name, age)
         super().__init__(name, age) # self 사용하지 않음
         self.depar = department
