@@ -91,10 +91,15 @@ for tc in range(1, T+1):
     st = []
     nums = input().split()
     cnt = 0
+    flag = 0
     for x in nums:
         if x not in '+-*/.': # 피연산자면
             st.append(int(x))
         elif x in '+-*/.':
+            if not st:
+                cnt = 0
+                flag = 1
+                break
             cnt = 1
             if len(st) >= 2:
                 op2 = st[-1]
@@ -111,7 +116,7 @@ for tc in range(1, T+1):
                 st.append(op1 * op2)
             else:
                 break
-    if not st or cnt == 0:
+    if not st or cnt == 0 or len(st) > 1:
         print(f"#{tc} error")
     elif st and cnt == 1:
         print(f"#{tc} {st[0]}")
