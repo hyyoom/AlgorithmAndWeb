@@ -1,7 +1,9 @@
 T = int(input())
 
+
 dy = [-1,1,0,0]
 dx = [0,0,-1,1]
+
 
 # while stack 활용
 def solve2(y,x):
@@ -21,7 +23,6 @@ def solve2(y,x):
                 st.append((ny,nx))
     return 0
         
-
 
 def dfs(y,x):
     if maze[y][x] == "3":
@@ -52,3 +53,4 @@ for tc in range(1, T+1):
                 ret2 = solve2(i,j)
                 break
     print(ret, ret2)
+    
