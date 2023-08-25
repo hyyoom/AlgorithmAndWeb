@@ -1,6 +1,4 @@
-import sys
 from collections import deque
-input = sys.stdin.readline
 
 N,M = map(int,input().split())
 maps = [list(map(int, input().strip())) for _ in range(N)]
@@ -20,6 +18,7 @@ def bfs(y,x):
             if 0<=ny<N and 0<=nx<M and not v[ny][nx] and maps[ny][nx] == 0:
                 v[ny][nx] = v[y][x] + 1
                 q.append((ny, nx))  # 수정된 부분: 좌표를 튜플 형태로 추가
+    
     if v[N-1][M-1] == 0:
         return -1
     else:
