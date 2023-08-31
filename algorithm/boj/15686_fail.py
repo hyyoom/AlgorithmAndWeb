@@ -28,9 +28,6 @@ def bfs(dir):
             if 0<=ny<N and 0<=nx<N and maps[ny][nx] == 1 and v1[ny][nx] == 0:
                 sums+=v1[ny][nx]
                 far_of_chicken.append(sums)
-                for i in v1:
-                    print(i)
-                print()
             
 dir_of_chicken = []
 for i in range(N):
@@ -39,7 +36,7 @@ for i in range(N):
             dir_of_chicken.append((i,j))
 
 bfs(dir_of_chicken)
-
+print(dir_of_chicken)
 print(far_of_chicken)
 
 
