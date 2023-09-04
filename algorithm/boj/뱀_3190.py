@@ -46,7 +46,7 @@ def bfs():
                 maps[ny][nx] = 1 # 사과 부분에 머리 있다고 표시
                 if 0<=dir[dir_i][0] + ny<N and 0<=dir[dir_i][0] + nx<N:
                     if maps[dir[dir_i][0] + ny][dir[dir_i][0] + nx] == 1:
-                        return time
+                        return time -1
                     else:
                         maps[dir[dir_i][0] + ny][dir[dir_i][0] + nx] = 1
 

@@ -12,6 +12,7 @@ def bfs(s,g):
             if visit[i] == 0:
                 visit[i] = visit[next_q] + 1
                 q.append(i)
+    return 0
 
 
 for tc in range(1, T+1):
@@ -25,5 +26,9 @@ for tc in range(1, T+1):
     S,G = map(int, input().split())
 
     visit = [0] * (V+1)
+
+    # ret = bfs(S,G)
+    # if ret == 0:
+        # print(f"#{tc} {ret}")
 
     print(f"#{tc} {bfs(S,G)}")
