@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .company{
+      position: absolute;
+      top: 10px;
+      right: 50px;
+    }
+
+    .container {
+      width: 800px;
+      height: 400px;
+      border: solid black 2px;
+      position: relative;
+    }
+
+    .name{
+      width: 200px;
+      float: left;
+    }
+
+    .text1{
+      line-height: 0;
+      text-align: center;
+    }
+    
+    .phone{
+      float: right;
+      width: 200px;
+    }
+
+    .text2{
+      line-height: 0;
+    }
+
+    .over{
+      overflow: hidden;
+    }
+
+    .description{
+      position: absolute;
+      line-height: 0;
+      float: right;
+      right: 50px;
+    }
+    hr{
+      width: 93%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <img src="profile.jpg" class="img" alt="Profile Image">
+      <h2 class="company">Company Name</h2>
+    </div>
+    <div class="over">
+      <div class="name">
+        <h3 class="text1">한글 이름</h3>
+        <h4 class="text1">English Name</h4>
+      </div>
+      <div class="phone">
+        <p class="text2">Phone Number</p>
+        <p class="text2">Email</p>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <p class="description">description</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- 
+  자식 결합자는 바로 밑에있는 결합자,
+  자식 결합자는 자신의 밑에 있는 모든 요소들을 뜻합니다.
+  자식 결합자는 > 로 표현하며
+  자손 결합자는 " "를 기준으로 작성하면 동작합니다.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div p {
+      color: blue;
+    }
+    div > p {
+      color: crimson;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <p>자식</p>
+    <span>
+      <p>&nbsp &nbsp &nbsp 손자</p>
+    </span>
+    <p>자식</p>
+  </div>
+</body>
+</html>
