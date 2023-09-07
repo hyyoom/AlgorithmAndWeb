@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+      .container-size{
+        width: 400px;
+        height: 500px;
+        /* border: black solid 2px; */
+      }
+
+      .remem{
+        float: left;
+      }
+    
+    </style>
+
+
+
+  </head>
+  <body>
+    
+    <main class="flex-column container-size flex-wrap">
+      <div class="d-grid gap-2">
+        <button class="btn btn-danger text-start" type="button">invalid Login or password</button>
+      </div>
+      <header>
+        <p class="h1 font-weight-bold text-center mt-3 mb-3 "><strong>SSAFY 전용 Gitlab 시스템</p></strong>
+      </header>
+      <hr>
+      <article class="border rounded">
+        <h2 class="text-center mt-2"><strong>Sign in</strong></h2>
+        <hr class="border border-primary border-1.5 opacity-75">
+        <form>
+          <div class="mb-3 mx-3">
+            <label for="exampleInputEmail1" class="form-label"><strong>Username or Email</label></strong>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3 m-3">
+            <label for="exampleInputPassword1" class="form-label"><strong>Password</label></strong>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="m3 form-check flex-column mx-3">
+            <input type="checkbox" class="form-check-input remem" id="exampleCheck1">
+            <label class="form-check-label remem" for="exampleCheck1">Remember me</label>
+            <p class="text-end text-primary" for="exampleCheck1">Forgot your password?</p>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-success text-center mb-3 mx-3" type="button">Sign in</button>
+          </div>
+        </form>
+      </article>
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

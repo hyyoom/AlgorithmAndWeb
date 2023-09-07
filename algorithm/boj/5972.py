@@ -4,7 +4,7 @@ N,M = map(int, input().split())
 
 node = [[] for _ in range(N+1)]
 v = [[] for _ in range(N+1)]
-cow = []
+cow = [[] for _ in range(N+1)]
 ret = []
 
 def bfs(s, g):
@@ -15,10 +15,11 @@ def bfs(s, g):
     while q:
         p = q.popleft()
         if p == g:
-            ret.append(v[nq])
+            ret.append(sums)
         for nq in node[p]:
             if not v[nq]:
-                v[nq] += cow[nq]
+                v[nq] = 1
+                # sums += cow[nq][1]
                 q.append(nq)
 
 
@@ -27,12 +28,14 @@ for i in range(M):
     a,b,c = map(int,input().split())
     node[a].append(b)
     node[b].append(a)
-    cow.append([a,b,c])
-cow.insert(0,0)
+    cow[a].append([b,c])
+    cow[b].append([a,c])
+
 
 for s in range(len(node[1])):
     bfs(node[1][s],N)
 
+print(cow)
 print(ret)
 
 
