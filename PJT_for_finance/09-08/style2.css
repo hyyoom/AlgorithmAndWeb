@@ -1,0 +1,66 @@
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.set-back-ground-img{
+    background:url("./AdobeStock_285565957.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 1000px;
+    z-index: -1;
+}
+
+.name{
+  color : white;
+  width: 100%;
+  height: 1000px;
+  z-index : 1;
+}
+
+.intro{
+  width: 90%;
+  height: 1000px;
+}
+
+.about-picture{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.my-face{
+  min-width: 375px;
+  max-width: 375px;
+  max-height: 508px;
+}
+
+/*  보이지 않게 */
+.about-text{
+  margin: 0;
+}
+
+.resume-board{
+  border-left: solid lightblue 2px;
+  height: 400px;
+}
+
+
+
+
+
+
+
+
+@media (max-width:1200px) {
+  .my-face{
+    min-width: 375px;
+    /* width: 60%; */
+    margin-top: 3;
+  }
+  
+  hr{
+    width: 100%;
+  }
+}

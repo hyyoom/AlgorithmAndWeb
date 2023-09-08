@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Noto+Sans:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style2.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <!-- <header> → 네비게이션 바
+        <main id="frontpage"> → 첫 화면 시 보여지는 간단한 소개
+        <article id=＂my-intro＂> → 자기소개
+        <article id="skills"> → 내가 가진 기술들
+        <article id=＂project＂> → 진행한 프로젝트 목록
+        <article id=＂contact＂> → 이메일 보내기
+        <footer> → 꼬리말 -->
+  <header class="set-back-ground-img">
+    <div class="name d-flex flex-column justify-content-center align-items-center">
+      <h1 class="h1 fw-bold mt-5">YOO HTUNGMIN</h1>
+      <h1 class="h1 fw-bold">SSAFY</h1>
+    </div>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Resume">Resume</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Skills">Skill</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <article id="about" class="container intro py-5">
+    <h2 class="h2 fw-bold text-black mb-4 mt-5 ">About Me</h2>
+    <hr class="border border-black border-3 opacity-75">
+    <div class="about-picture col-md-8 col-lg-6 d-flex flex-column flex-lg-row">
+      <img class="my-face me-5 mb-4 img-fluid" src="./e8 유형민 반명re.jpg" alt="">
+
+    <article class="mb-5 d-flex flex-column justify-content-between mb-5">
+      <div class="about-text flex-column">
+        <h4 class="h2 mb-4 fw-bold">Web Developer</h4>
+        <p class="fw-bold">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia iure exercitationem ipsa autem voluptatem ipsam, eligendi tenetur vel, hic amet dicta quaerat id deserunt fugiat nam est officiis, sequi accusantium?</p>
+        <p class="fw-bold">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia iure exercitationem ipsa autem voluptatem ipsam, eligendi tenetur vel, hic amet dicta quaerat id deserunt fugiat nam est officiis, sequi accusantium?</p>
+      </div>
+
+      <article class="my-privat">
+        <div class="d-flex mb-1 mt-5">
+          <i class="bi bi-caret-right"></i>
+          <p class="fw-bold ms-1 me-3">Name :<p>유 형 민</p></p>
+        </div>
+        <div class="d-flex mb-1">
+          <i class="bi bi-caret-right"></i>
+          <p class="fw-bold ms-1 me-3">Phone :<p>010-8418-8820</p></p>
+        </div>
+        <div class="d-flex mb-1">
+          <i class="bi bi-caret-right"></i>
+          <p class="fw-bold ms-1 me-3">Email :<p>hmy940424@naver.com</p></p>
+        </div>
+        <div class="d-flex mb-1">
+          <i class="bi bi-caret-right"></i>
+          <p class="fw-bold ms-1 me-3">Address :<p>서울시 은평구</p></p>
+        </div>
+      </article>
+    </article>
+
+    </div>
+
+<!-- resume -->
+    <section id="Resume" class="container mt-5 pt-5 intro px-0 mx-0 d-flex flex-column justify-content-start">
+      <h2 class="h2 fw-bold mt-5">My Education && External activities && Cerrer</h2>
+      <hr class="border border-black border-3 opacity-75">
+      <h4>학력, 대외활동, 경력에 대한 설명입니다.</h4>
+
+      <div class="d-flex flex-column flex-lg-row justify-content-between my-5 col-md-8 col-lg-12">
+
+        <div class="mb-5">
+          <h4 class="mx-2">Education</h4>
+          <div class="resume-board">
+            <p class="mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nemo provident, quibusdam numquam cumque eum animi vitae odit exercitationem facere perferendis suscipit deleniti sunt totam maiores quasi a beatae! Labore!</p>
+          </div>
+        </div>
+        
+        <div class="mb-5">
+        <h4 class="mx-2">External activities</h4>
+          <div class="resume-board">
+            <p class="mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nemo provident, quibusdam numquam cumque eum animi vitae odit exercitationem facere perferendis suscipit deleniti sunt totam maiores quasi a beatae! Labore!</p>
+          </div>
+        </div>
+        
+        <div class="mb-5">
+          <h4 class="mx-2">Cerrer</h4>
+          <div class="resume-board">
+            <p class="mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nemo provident, quibusdam numquam cumque eum animi vitae odit exercitationem facere perferendis suscipit deleniti sunt totam maiores quasi a beatae! Labore!</p>
+          </div>
+        </div>
+
+      </div>
+
+  <!--  -->
+
+    <article id="Skills" class="mt-5 pt-5 intro px-0 mx-0">
+
+      <h2 class="h2 fw-bold mt-5">Skills</h2>
+      <hr class="border border-black border-3 opacity-75">
+      <h4>현재까지 배우고 사용 해봤던 기술입니다.</h4>
+      
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+
+        <div class="my-4">
+          <h5 class="h5 fw-bold">Language</h5>
+          <p>C/C#</p>
+          <p>Python</p>
+        </div>
+        <div class="my-4">
+          <h5 class="h5 fw-bold">FrontEnd</h5>
+          <p>Vue.js</p>
+          <p>HTML</p>
+          <p>CSS</p>
+        </div>
+        <div class="my-4">
+          <h5 class="h5 fw-bold">BackEnd</h5>
+          <p>Django</p>
+        </div>
+        <div class="my-4">
+          <h5 class="h5 fw-bold">Tool</h5>
+          <p>Git</p>
+          <p>Github</p>
+          <p>Visual Studio</p>
+          <p>Visual Studio Code</p>
+          <p>Pycham</p>
+        </div>
+
+      </div>
+    </article>
+
+    <footer id="Contact">
+      <h2 class="h2 fw-bold">CONTACT ME</h2>
+      <hr class="border border-black border-3 opacity-75">
+      <h4 class="mb-5">포트폴리오를 끝까지 봐주셔서 감사합니다.</h4>
+
+      <div class="d-flex flex-column text-white flex-lg-row justify-content-between p-4 my-5 bg-subtle border p-2 mb-2 bg-dark rounded">
+        <div class="my-3">
+          <h5>Location:</h5>
+          <p>서울시 은평구</p>
+        </div>
+        <div class="my-3">
+          <h5>Email:</h5>
+          <p>hmy940424@naver.com</p>
+        </div>
+        <div class="my-3">
+          <h5>Call:</h5>
+          <p>010-8418-882-</p>
+        </div>
+        <div class="my-3">
+          <h5>Github:</h5>
+          <a href="https://github.com/hyungmin12" class="link-light">github</a>
+        </div>
+      </div>
+    </footer>
+  </article>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+
