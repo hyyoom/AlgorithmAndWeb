@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <a href="{% url "articles:index" %}">home으로 이동</a>
+  <a href="{% url "articles:page1" %}">page1로 이동</a>
+</div>
+{% endblock content %}

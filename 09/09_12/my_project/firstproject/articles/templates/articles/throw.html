@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  사용자가 이름 입력이 가능한 화면
+  <!-- 
+    form->action : 데이터를 전달받을 목적지 url
+    form->methods : 데이터 전달 방식 get,post 안적으면 GET으로 돼있음
+    input->name : key,value형태로 보낼때 데이터의 key값
+    
+  
+  -->
+  {% comment %} 사용자에게 데이터 입력받기 -- form요소 {% endcomment %}
+  <form action="/greeting" method="GET">
+    {% comment %} {% csrf_token %} POST보낼때 {% endcomment %}
+    {% comment %} 글자 입력받을 때는 input type="text" {% endcomment %}
+    <input type="text" name="username">
+    {% comment %} 전송 버튼 {% endcomment %}
+    <input type="submit">
+  </form>
+</body>
+</html>

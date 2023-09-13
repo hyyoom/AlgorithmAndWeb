@@ -1,0 +1,11 @@
+{% extends "articles/base.html" %}
+
+
+{% block context %}
+<h1>Throw</h1>
+<form action="/catch/">
+  <label for="message">메세지</label>
+  <input type="text" name='message' id='message'>
+  <input type="submit">
+</form>
+{% endblock context %}
