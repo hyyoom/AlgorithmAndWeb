@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>catch! i catch {{data1}}</p>
+<form action="{% url "throw_loops:third" %}">
+  <p>and throw! <input type="text" name="message1"> twice! <input type="text" name='message2'> <input type="submit" value="휙"></p>
+</form>
+{% endblock content %}

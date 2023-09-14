@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if data != None %}
+  <p>oops! i catch only {{ data|random }} ㅠㅠ</p>
+{% else %}
+  <p>catch! i catch nothing!</p>
+{% endif %}
+
+<form action="{% url "throw_loops:first" %}">
+  <p>throw! <input type="text" name="message1"> <input type="submit" value="휙"></p>
+
+</form>
+{% endblock content %}
