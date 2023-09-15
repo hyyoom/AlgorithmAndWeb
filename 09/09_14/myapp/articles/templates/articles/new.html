@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+  <h1>여기가 NEW</h1>
+  <div>
+    <form action="{% url "articles:create" %}" method="POST">
+      {% csrf_token %} <!--post할때 넣어줘야 장고가 받아준다.-->
+      <label for="title">제목 : </label>
+      <input type="text" name='title' id='title'>
+    </div>
+    
+    <div>
+      <label for="content">내용 : </label>
+      <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit" value="글쓰기">
+  </form>
+</div>
+{% endblock content %}
