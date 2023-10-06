@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        {% block style_sheet %}
+        {% endblock style_sheet %}
+    </style>
+</head>
+<body>
+    <div sytle="display:flex;">
+        <a href="{% url "problem1" %}">문제1</a>
+        <a href="{% url "problem2" %}">문제2</a>
+        <a href="{% url "problem3" %}">문제3</a>
+        <a href="{% url "problem4" %}">문제4</a>
+    </div>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
