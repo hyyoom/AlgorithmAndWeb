@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>책 상세 정보</h1>
+<p>등록 번호 : {{Books.pk}}</p>
+<p>제목 : {{Books.title}}</p>
+<p>설명 : {{Books.description}}</p>
+<hr>
+<h2>리뷰 등록</h2>
+<form action="{% url "accounts:create" %}" method="POST">
+    {% csrf_token %}
+    {{Revie_Forms}}
+    <input type="submit" value="리뷰 작성">
+</form>
+{% endblock content %}

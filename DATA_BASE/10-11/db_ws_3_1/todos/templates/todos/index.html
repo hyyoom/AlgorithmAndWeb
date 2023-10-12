@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Todo</h1>
+<hr>
+
+{% if todos%}
+{% for todo in todos %}
+<li>edwin - {{todo.title}}</li>
+
+<form action="{% url "todos:todo_complete" todo.pk %}" method="POST">
+    {% csrf_token %}
+    {% if todo.complete == True %}
+    <input type="submit" value="취소하기">
+    {% else %}
+    <input type="submit" value="완료하기">
+    {% endif %}
+
+</form>
+
+{% if request.user.is_authenticated %}
+<form action="{% url "todos:delete" todo.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+</form>
+{% endif %}
+
+{% endfor %}
+{% else %}
+<p>작성된 글이 없습니다.</p>
+{% endif %}
+
+
+
+{% endblock content %}
