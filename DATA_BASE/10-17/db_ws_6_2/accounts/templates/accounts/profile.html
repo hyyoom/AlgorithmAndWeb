@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+
+<h1>{{person.username}}님의 프로필</h1>
+<br>
+
+<div class="d-flex">
+  <p>팔로잉 : {{person.followings.all|length}} /</p>
+  <p> 팔로워 : {{person.followers.all|length}}</p>
+</div>
+
+{% if person.username != user.username %}
+<form action="{% url "accounts:follow" person.pk%}" method="POST">
+  {% csrf_token %}
+  {% if request.user in person.followers.all %}
+  <input type="submit" value="팔로우 취소">
+  {% else %}
+  <input type="submit" value="팔로우">
+  {% endif %}
+</form>
+{% endif %}
+
+
+
+<hr>
+<h2>{{person.username}} 게시글</h2>
+{% for movie in person.movie_set.all %}
+  {{movie.title}}
+{% endfor %}
+
+<hr>
+<h2>{{person.username}} 댓글</h2>
+{% for comment in person.comment_set.all %}
+  {{comment.content}}
+{% endfor %}
+<hr>
+
+<a href="{% url "movies:index" %}">이전</a>
+
+{% endblock content %}

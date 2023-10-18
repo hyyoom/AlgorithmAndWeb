@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>{{ person.username }}님의 프로필</h1>
+  <a href="{% url "articles:index" %}">back</a>
+
+  <hr>
+  <p>{{person.username}} 팔로잉 하는 사람 : {{person.followings.all|length}}명</p>
+  {% for follow in person.followings.all %}
+  <p>{{follow.username}}</p>
+  {% endfor %}
+
+  <hr>
+  <p>{{person.username}} 팔로잉 하는 사람 : {{person.followers.all|length}}명</p>
+  {% for follow in person.followers.all %}
+  <p>{{follow.username}}</p>
+  {% endfor %}
+
+  <hr>
+  {% if person.pk != user.pk %}
+  <form action="{% url "accounts:follow" person.pk%}" method="POST">
+    {% csrf_token %}
+    {% if user in person.followers.all %}
+    <input type="submit" value="팔로우 취소">
+    {% else %}
+    <input type="submit" value="팔로우">
+    {% endif %}
+  </form>
+  {% endif %}
+
+  <h1>{{person.username}}님이 작성한 게시글</h1>
+  {% for article in person.article_set.all %}
+    <p>{{article.title}}</p>
+  {% endfor %}
+  <hr>
+
+  <h1>{{person.username}}님이 작성한 댓글</h1>
+    {% for comment in person.comment_set.all %}
+    <p>{{comment.content}}</p>
+    {% endfor %}
+  <hr>
+
+  <h1>{{person.username}}님이 좋아요를 누른 게시글</h1>
+  {% for like in person.like_articles.all %}
+    <p>{{like.title}}</p>
+  {% endfor %}
+</body>
+</html>
