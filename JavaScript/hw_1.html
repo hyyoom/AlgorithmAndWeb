@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>나의 포트폴리오</title>
+  <style>
+    
+.container {
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.title {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.img {
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+h2 {
+  color: #555;
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 5px;
+}
+
+p {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.list-group {
+  list-style-type: square;
+  color: #777;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-size: 16px;
+}
+
+
+.highlight {
+  color: #ff6f00;
+}
+
+li {
+  color: #444;
+  margin-bottom: 5px;
+}
+
+  </style>
+</head>
+<h1>안녕하세요, 제 이름은 <b id="name">홍길동</b>입니다.</h1>
+
+<img>
+  <img src="" alt="" width="200">
+  
+  <h2>소개</h2>
+  <p>저는 <b id="job">[직업/전공]</b>으로 일하고 있습니다. <b id="experience">[간단한 경력/학력]</b>을 가지고 있으며, <b id="study">[특기 또는 관심 분야]</b>에 대해 꾸준히 공부하고 있습니다.</p>
+  
+  <h2>프로젝트</h2>
+  <ul id="list-group">
+    <li><b>프로젝트 1:</b> <span class="project-1">[프로젝트 1 제목]</span></li>
+    <li><b>프로젝트 2:</b> <span class="project-2">[프로젝트 2 제목]</span></li>
+    <li><b>프로젝트 3:</b> <span class="project-3">[프로젝트 3 제목]</span></li>
+  </ul>
+  
+  <h2>연락처</h2>
+  <p>이메일: <b id="email">[이메일 주소]</b></p>
+  <p>전화번호: <b id="phone">[전화번호]</b></p>
+  <p>SNS: <b id="SNS">[SNS]</b></p>
+  
+  <script>
+    const bodyTag = document.querySelector('body')
+    const h1Tag = document.querySelector('h1')
+    const job_Id = document.querySelector('#job')
+    const name_Id = document.querySelector('#name')
+    const experience_Id = document.querySelector('#experience')
+    const email_Id = document.querySelector('#email')
+    const phone_Id = document.querySelector('#phone')
+    const study_Id = document.querySelector('#study')
+    const sns_Id = document.querySelector('#SNS')
+    const imgTag = document.querySelector('img')
+    imgTag.setAttribute('src', './img1.jpg')
+    imgTag.classList.add('img')
+    
+    h1Tag.classList.add('title')
+    bodyTag.classList.add('container')
+    job_Id.textContent = '개발자'
+    name_Id.textContent = '유형민'
+    experience_Id.textContent = 'ssafy'
+    email_Id.textContent = 'hmy9404242@naver.com'
+    phone_Id.textContent = '010-2222-3333'
+    study_Id.textContent = 'JavaScript'
+    sns_Id.textContent = 'insta'
+
+    sns_Id.classList.add('highlight')
+    job_Id.classList.add('highlight')
+    name_Id.classList.add('highlight')
+    experience_Id.classList.add('highlight')
+    email_Id.classList.add('highlight')
+    phone_Id.classList.add('highlight')
+    study_Id.classList.add('highlight')
+
+  </script>
+</body>
+</html>
