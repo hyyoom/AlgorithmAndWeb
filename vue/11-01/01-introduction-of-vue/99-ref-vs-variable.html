@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p >반응성 변수: {{reacticeValue}}</p>
+    <p >일반 변수: {{normalValue}}</p>
+    <button @click="increment">값 업데이트</button>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+  <script>
+    const {createApp, ref} = Vue
+    const app = createApp({
+      setup(){
+        const reacticeValue = ref(0)
+        let normalValue = 0
+        const increment = function(){
+          reacticeValue.value++
+          normalValue++
+          console.log(normalValue) 
+          //증가하기는 하지만, vue가 감지하지못함
+          //감지하지 못하니까 밖에서 못씀.
+        }
+        const greeting = ref('hi')
+        return {
+          reacticeValue,
+          normalValue,
+          increment,
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

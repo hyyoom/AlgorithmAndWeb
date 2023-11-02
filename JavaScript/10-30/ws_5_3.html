@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>인기 영화들</h1>
+  <ul>
+
+  </ul>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- axios CDN을 삽입한다. -->
+  <script>
+      const API_KEY = '5609f239677f45202852fb3b373f716d'
+      const ul = document.querySelector('ul')
+
+      
+    // 코드를 입력한다.
+  </script>
+</body>
+</html>
+
+<!-- <script>
+  const API_URI = 'https://dog.ceo/api/breeds/image/random'
+  
+  function getDog () {
+    axios.get(API_URI)
+    .then(res => {
+      const imgElem = document.querySelector('img')
+      console.log(res.data.message)
+      imgElem.setAttribute('src',res.data.message)
+    })
+    .catch((error)=>{console.log(error)})
+    // axios를 사용하여 API_URI로 GET 요청을 보낸다.
+    // .then 메서드를 통해 요청이 성공적인 경우의 콜백함수를 정의한다.
+    // 응답객체의 데이터에서 이미지에 대한 리소스를 img 요소의 src 속성으로 할당한다.
+  }
+
+  const button = document.querySelector('button')
+  button.addEventListener('click', getDog)
+</script> -->

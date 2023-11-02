@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .is-selected {
+      background-color: #eee;
+    }
+
+    .is-required {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>다양한 전시 정보</h1>
+    <hr>
+    <ul>
+      <li :id="enTitle" :class="{'is-selected': isSelected}">
+        <label  for="selected">모네 인사이드</label>
+        <input type="checkbox" name="selected" id="selected" v-model="isSelected">
+
+        <h3 v-if="isSelected">{{koTitle}}</h3>
+        <p v-if="isSelected" v-html="description"></p>
+        <hr v-if="isSelected">
+        <p v-if="isSelected">{{artMuseum}}</p>
+        <a v-if="isSelected" :href="museumURL">전시장 바로가기</a>
+        <hr>
+        <p>입장권 구매하기</p>
+        <div>
+            <p>가격:1000</p>
+          <span :class="{'is-required': peopleCount < 1}">인원 수 : {{peopleCount}} 명 </span>
+          <button @click="decreaseAndIncreaseNumber(-1)">-</button>
+          <button @click="decreaseAndIncreaseNumber(1)">+</button>
+        </div>
+        <hr>
+      </li>
+    </ul>
+    <p>총 입장료 : {{1000*peopleCount}} 원</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+    const {createApp, ref} = Vue
+    const app = createApp({
+        setup(){
+            const koTitle = ref('모네 인사이드')
+            const enTitle = ref('monet-inside')
+            const artMuseum = ref('예술의 전당')
+            const museumURL = ref('https://www.sac.or.kr/')
+            const description = ref('<p> &lt;모네 인사이드&gt; 는 빛의 화가 <b>클로드 모네</b>가 남긴 소중한 명작들을 현대적 감각으로 재해석해 음악과 함께 감상하는 미디어아트 전시입니다. </p>')
+            const peopleCount = ref(0)
+            const totalPrice = ref(0)
+            const isSelected = ref(false)
+            const decreaseAndIncreaseNumber = function(num){
+                if (num === -1 && 0 < peopleCount.value)
+                    peopleCount.value += -1
+                else if( num === 1 && 10 > peopleCount.value)
+                    peopleCount.value += 1
+            }   
+            return {
+                koTitle,
+                enTitle,
+                artMuseum,
+                museumURL,
+                description,
+                peopleCount,
+                isSelected,
+                decreaseAndIncreaseNumber,
+            }
+        }
+    })
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .study{
+        color : red;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function myFunc1(a,b,c){
+      console.log(a,b,c)
+    }
+
+    const myFunc2 = function(a,b,c){
+      console.log(a,b,c)
+    }
+    //콜백 함수
+    function a(){
+      console.log('저는 a입니다.')
+      console.log(this)
+    }
+    //함수를 인자로 받아오는 함수
+    const b = func=>{
+      console.log('저는 b입니다. func 실행할게요.')
+      func()
+    }
+
+    a()
+    myObj = {
+      name:"value",
+      key1:10,
+      key2:{},
+      score:[10,20,30],
+      f1:()=>{console.log("a")},
+      f2:function(name){console.log(`안녕 나는 ${this.name}.`)},
+      scoreFun1:function(){
+        this.score.forEach(item=>{
+          console.log(`${this.name} : ${item}`)
+        })
+      },
+      scoreFun2:function(){
+        this.score.forEach(function (item){
+          console.log(`${this.name} : ${item}`)
+        })
+      }
+    }
+
+    myObj.f2()
+    //myObj.name = "김싸피"
+    myObj.f2()
+    myObj.scoreFun1()
+    myObj.scoreFun2()
+
+
+    // 객체 = key : value
+    
+
+    
+
+    const obj = {
+      name : '유형민',
+      age : 14,
+      score : 40,
+    }
+
+
+    const objFunc = function(obj){
+      console.log(obj?.name)
+    }
+    objFunc()
+
+
+  </script>
+</body>
+</html>

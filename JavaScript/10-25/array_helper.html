@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const numbers = [10,20,30]
+    numbers.forEach((item1, idx, hw)=>{console.log(item1, idx,hw)})
+    numbers.map((item1, idx, hw)=>{console.log(item1, idx,hw)})
+
+    //console.log(numbers)
+    const num = numbers.map((item)=>{return item*item})
+    console.log(num)
+    //const a = (item,idx)=>{console.log(item, idx)}
+    //a("a",3)
+    arr = [1,2,3,4,5,6,7,8]
+    a = arr.filter((item)=>{return item%2==0}) 
+    console.log(a)
+
+</script>
+</body>
+</html>

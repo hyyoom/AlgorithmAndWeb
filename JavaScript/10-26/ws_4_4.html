@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <form action="/todos/">
+    <input type="text">
+    <button>Todo</button>
+  </form>
+  <ul></ul>
+
+<script>
+  const form = document.querySelector('form')
+  const inputTag = document.querySelector('input')
+  const btn = document.querySelector('button')
+  const ulTag = document.querySelector('ul')
+  
+  function decoration (event) {
+    event.target.classList.toggle('done')
+    console.log(event.target)
+  }
+
+  function deleteBox(event) {
+    const divToDel = event.target.parentElement
+    ulTag.removeChild(divToDel)
+  }
+
+
+  function addTodo (event) {
+    event.preventDefault()
+    if (!inputTag.value.trim()){
+        alert("입력하셈")
+    }
+    else{
+        const liTag = document.createElement('li')
+        const xBox = document.createElement('button')
+        const newDiv = document.createElement('div')
+        xBox.textContent = 'x'
+        liTag.textContent = inputTag.value
+        
+        newDiv.appendChild(liTag)
+        newDiv.appendChild(xBox)
+        // newDiv.classList.add('d-flex')
+        // newDiv.classList.add('flex-row')
+        
+        newDiv.style.display = 'flex';
+        newDiv.style.flexDirection = 'row';
+        ulTag.appendChild(newDiv)
+        inputTag.value = ''
+        
+        liTag.addEventListener('click',decoration)
+        xBox.addEventListener('click',deleteBox)
+        
+    }
+  }
+    
+    
+    form.addEventListener('submit', addTodo)
+    
+</script>
+</body>
+</html>
