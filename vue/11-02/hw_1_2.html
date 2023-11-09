@@ -7,59 +7,54 @@
 </head>
 <body>
   <div id="app">
-    <p :style="styleObject">Let's change the font style!</p>
+    <h1>{{title}}</h1>
+    <p>평균 점수 : {{avgScore}}</p>
+    <button @click="cal_average">평균 점수 계산</button>
     <hr>
-    <p>색상 목록</p>
-    <ul>
-      <li>red</li>
-      <li>blue</li>
-    </ul>
-
-    <p>글꼴 목록</p>
-    <ul>
-      <li>fantasy</li>
-      <li>cursive</li>
-      <li>Impact</li>
-    </ul>
-    <hr>
-
-    <form @submit.prevent="changeStyle">
-      <label for="color">색 입력 : </label>
-      <input v-model="colorType" type="text" id="color">
-      <br>
-      <label for="font">글꼴 입력 : </label>
-      <input v-model="fontType" type="text" id="font">
-      <br>
-      <button type="submit">변경!</button>
-    </form>
+    <p>전체 점수 목록 : {{scores}}</p>
+    <p>방학 여부 : {{is_vacation}}</p>
   </div>
-
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
-    const { createApp, ref } = Vue
-    const app = createApp({
-      setup() {
-        const colorType = ref('')
-        const fontType = ref('')
-        const styleObject = ref({
-          color: '',
-          fontFamily: ''
-        })
-
-        const changeStyle = function () {
-          styleObject.value.color = colorType.value
-          styleObject.value.fontFamily = fontType.value
+    const {createApp, ref} = Vue
+   
+   const app = createApp({
+    setup(){
+        const title = ref('점수표')
+        const avgScore = ref(null)
+        const scores = ref([10,20,30,40,50])
+        const is_vacation = ref([true])
+        const cal_average = function(){
+            let sum = 0;
+          for (let score of scores.value) {
+            sum += score;
+          }
+          avgScore.value = sum / scores.value.length;
+        };
+        return{
+            title,
+            avgScore,
+            scores,
+            is_vacation,
+            cal_average,
         }
-
-        return {
-          colorType,
-          fontType,
-          styleObject,
-          changeStyle
-        }
-      }
-    })
-    app.mount("#app")
+    }
+   })
+   app.mount("#app")
+   /*
+      - Vue3 CDN을 사용한다. 
+      1. 아이디가 app인 container 요소에 새로운 앱 인스턴스를 mount 하시오.
+      2. 각 변수를 작성한다.
+        - title 변수에 '점수표' 문자열을 할당한다.
+        - avgScore 변수에 null을 할당한다.
+        - scores 변수에, 임의로 작성한 정수를 요소로 하는 배열을 할당한다.
+        - is_vacation 변수에 상태정보를 담고 있는 객체를 할당한다. 
+        - 키는 status 값은 boolean 타입으로 작성한다.
+        - 단, ref 함수를 사용하여 반응성을 가지는 참조 변수로 만들어야 한다.
+      3. 각 데이터는 template을 수정하여 적절하게 표기 될 수 있도록 작성한다.
+      4. cal_average 함수를 정의하고, `평균 점수 계산` 버튼을 클릭하면 함수가 작동하도록 한다.
+        - cal_average 함수는 scores 배열에 담긴 정수의 평균 값을 avgScore에 할당한다.
+    */
   </script>
 </body>
 </html>

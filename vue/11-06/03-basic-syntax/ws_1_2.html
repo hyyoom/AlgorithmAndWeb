@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+	<style>
+    li {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 10px 0;
+      background-color: #f5f5f5;
+    }
+    .cheap {
+      background-color: #e1f7e1;
+    }
+    .expensive {
+      background-color: #f7e1e1;
+    }
+    .selected {
+      background-color: #ffc;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+  <div id="app">
+    <h1>다양한 전시 정보</h1>
+    <div>
+      <h2 v-show="selectedInfos.length === 0">관람 예정인 전시 : 관람 예정인 전시가 없습니다.</h2>
+      <div style="display: flex;">
+      <h3 v-show="selectedInfos.length">관람 예정인 전시 : </h3>
+        <h3 v-for="s in selectedInfos"> {{s.name}}, </h3>
+      </div>
+      <p>예상 총 금액 : {{totalPrice}}</p>
+      <h2 v-show="!selectedInfos.length">관람 예정인 전시가 없습니다.</h2>
+    </div>
+    <label for="isActive">전시 중인 정보만 보기</label>
+    <input v-model="isActive" type="checkbox" id="isActive">
+
+    <template v-if="isActive">
+      <ul>
+        <li :class="{ cheap: 0 < art.price <= 5000, expensive: art.price > 5000 }" 
+          v-for="art in isActiveExhibition" 
+          :key="art.name" >
+        <div v-if="art.active" style="display: flex;">
+          <p>전시 관람하기</p>
+          <input v-model="art.isSelected" type="checkbox">
+          <p>{{art.isSelected}}</p>
+        </div>
+        <div v-if="!art.active">
+        <p style="color:red;">전시가 종료되어 관람 할 수 없습니다.</p>
+        </div>
+        <h3>{{art.name}}</h3>
+        <hr>
+        <p>{{art.place}}</p>
+        <p v-if="art.price === 0">무료 전시입니다.</p>
+        <p v-else>{{art.price}}</p>
+        <hr>
+        </li>
+      </ul>
+    </template>
+    <template v-if="!isActive">
+      <ul>
+        <li :class="{ cheap: 0 < art.price <= 5000, expensive: art.price > 5000 }" 
+          v-for="art in artInfo" 
+          :key="art.name">
+          <div v-if="art.active" style="display: flex;">
+            <p>전시 관람하기</p>
+            <input v-model="art.isSelected" type="checkbox">
+            <p>{{art.isSelected}}</p>
+
+          </div>
+          <div v-if="!art.active">
+          <p style="color:red;">전시가 종료되어 관람 할 수 없습니다.</p>
+          </div>
+        <h3>{{art.name}}</h3>
+        <hr>
+        <p>{{art.place}}</p>
+        <p v-if="art.price === 0">무료 전시입니다.</p>
+        <p v-else>{{art.price}}</p>
+        <hr>
+        </li>
+      </ul>
+    </template>
+
+  </div>
+
+  <script>
+    const {createApp, ref, computed, watch} = Vue
+    const app = createApp({
+      setup() {
+        // const isSelected = ref(false)
+        const selectedInfos = ref([])
+        let totalPrice = ref(0)
+        
+        // const selectedWatch = watch(filterdInfos,)
+
+        const artInfo = ref([
+                       {'name' : '무라카미 다카시 : 무라카시좀비',
+                        'place' : '부산 시립 미술관',
+                        'price' : 1000,
+                        'active' : true,
+                        isSelected : false},
+        
+                      {'name' :  '마우라치오 카텔란 개인전',
+                      'place' :  '리움 미술관',
+                      'price' : 30000,
+                      'active' : true,
+                      isSelected : false},
+
+                      {'name' :  '조선백자전',
+                      'place' : '리움 미술관',
+                      'price' : 30000,
+                      'active' : true,
+                      isSelected : false},
+                      
+                      {'name' :  '한국 실험미술 1960 - 1970',
+                      'place' :  '국립현대미술관',
+                      'price' : 0,
+                      'active' : true,
+                      isSelected :false},
+                      
+                      {'name' :  '에드워드 호퍼 : 길 위에서',
+                      'place' :  '서울 시립 미술관',
+                      'price' : 1000,
+                      'active' : false,
+                      isSelected :false},
+                      
+                      {'name' : '알렉산더 칼더 x 이우환',
+                      'place' : '국제갤러리 서울점',
+                      'price' : 15000,
+                      'active' : false,
+                      isSelected: false},
+                     ])
+                    
+        const isActive = ref(true)
+        const isActiveExhibition = computed(()=>{
+          return artInfo.value.filter((art)=>art.active)
+        })
+        
+        const filterdInfos = watch(artInfo.value,()=>{
+          selectedInfos.value = artInfo.value.filter((art)=>art.isSelected)
+          let total = 0
+          for (art of artInfo.value){
+            if (art.isSelected === true){
+              total += art.price
+            }
+          }
+          totalPrice.value = total
+        })
+
+        return {
+          artInfo,
+          isActiveExhibition,
+          isActive,
+          totalPrice,
+          selectedInfos,
+          filterdInfos,
+          // isSelected,
+        }
+      }
+    })
+    app.mount("#app")
+
+
+
+
+    
+  </script>
+</body>
+</html>
